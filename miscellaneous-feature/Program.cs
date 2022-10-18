@@ -11,7 +11,7 @@ namespace miscellaneous_feature
     {
         static void Main(string[] args)
         {
-            FileWatcher myWatcher = new FileWatcher(new FileSystemWatcher(@"C:\Temp"));
+            FileWatcher myWatcher = new FileWatcher(new FileSystemWatcher(@"C:\Temp\Logs"));
             myWatcher.Init();
         }
     }

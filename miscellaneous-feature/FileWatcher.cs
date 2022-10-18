@@ -44,22 +44,32 @@ namespace miscellaneous_feature
                 return;
             }
             Console.WriteLine($"Changed: {e.FullPath}");
+            string text = File.ReadAllText(e.FullPath);
+            Console.WriteLine(text);
         }
 
         private static void OnCreated(object sender, FileSystemEventArgs e)
         {
             string value = $"Created: {e.FullPath}";
             Console.WriteLine(value);
+            string text = File.ReadAllText(e.FullPath);
+            Console.WriteLine(text);
         }
 
-        private static void OnDeleted(object sender, FileSystemEventArgs e) =>
+        private static void OnDeleted(object sender, FileSystemEventArgs e)
+        {
             Console.WriteLine($"Deleted: {e.FullPath}");
+            string text = File.ReadAllText(e.FullPath);
+            Console.WriteLine(text);
+        }
 
         private static void OnRenamed(object sender, RenamedEventArgs e)
         {
             Console.WriteLine($"Renamed:");
             Console.WriteLine($"    Old: {e.OldFullPath}");
             Console.WriteLine($"    New: {e.FullPath}");
+            string text = File.ReadAllText(e.FullPath);
+            Console.WriteLine(text);
         }
 
         private static void OnError(object sender, ErrorEventArgs e) =>
